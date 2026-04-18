@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSD Community – fojadrachi</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    /* LGBTQ+ Flag als Hintergrund (saubere Streifen) */
+    /* Progress Pride Flag (neueste Variante mit Chevron) */
+    background:
+        /* Auto Formate: webp > png > jpg */
+        url('flag.webp') center/cover no-repeat,
+        url('flag.png') center/cover no-repeat,
+        url('flag.jpg') center/cover no-repeat,
+        /* Fallback: bunter Gradient wie vorher */
+        linear-gradient(135deg, red, orange, yellow, green, blue, violet);
+    background-attachment: fixed;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    z-index: 0;
+}
+
+.layout {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 25px;
+    max-width: 1300px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.sidebar {
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+.hero {
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero p {
+    opacity: 1;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: auto;
+}
+
+.card {
+    background: rgba(0,0,0,0.75);
+    padding: 25px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 999px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.channels {
+    margin-top: 15px;
+}
+
+.channel {
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.15);
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.footer {
+    text-align: center;
+    opacity: 0.8;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+@media(max-width: 900px){
+    .layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="layout">
+
+<div class="main">
+
+<div class="hero card">
+    <h1>🌈 CSD Community</h1>
+    <p>
+        Willkommen auf unserer LGBTQ+ Community Plattform. Hier findest du einen sicheren Ort,
+        um neue Leute kennenzulernen, dich auszutauschen, gemeinsam zu zocken oder einfach
+        du selbst zu sein. Unsere Community steht für Respekt, Offenheit und Support.
+        <br><br>
+        Egal ob du schon lange Teil der Szene bist oder gerade erst anfängst dich zu entdecken –
+        bei uns bist du willkommen. Wir bauen eine entspannte, aktive und freundliche Community
+        auf, in der jeder Platz hat.
+    </p>
+    <a class="button" href="https://dinvite.fojadrachi.com" target="_blank">Discord beitreten</a>
+</div>
+
+<div class="card">
+    <h2 style="text-align:center;">🏳️‍🌈 Über die Community</h2>
+    <p style="line-height:1.6; max-width:800px; margin:auto;">
+        Unsere Community ist mehr als nur ein Discord Server – sie ist ein Ort, an dem du dich frei entfalten kannst.
+        Egal ob du neue Freunde suchst, dich über Themen austauschen willst oder einfach nur entspannt Zeit verbringen möchtest,
+        hier findest du genau das.
+        <br><br>
+        Wir bieten dir strukturierte Text- und Voice-Channels für jede Situation:
+        vom entspannten Smalltalk bis hin zu Gaming-Sessions oder tiefgründigen Gesprächen.
+        Außerdem gibt es regelmäßig kleine Events, spontane Runden und Community-Aktionen.
+        <br><br>
+        Unser Ziel ist es, eine Umgebung zu schaffen, in der Respekt, Offenheit und Zusammenhalt im Mittelpunkt stehen.
+        Jeder Mensch soll sich hier sicher fühlen können – unabhängig von Identität, Orientierung oder Hintergrund.
+        <br><br>
+        Wenn du also Lust hast Teil einer aktiven, freundlichen und wachsenden LGBTQ+ Community zu werden,
+        dann schau gerne auf unserem Discord vorbei 🚀
+    </p>
+    <div style="text-align:center;">
+        <a class="button" href="https://dinvite.fojadrachi.com" target="_blank">Jetzt beitreten</a>
+    </div>
+</div>
+
+<div class="footer">
+    © 2026 CSD Community – 
+    <a href="https://fojadrachi.com" target="_blank">fojadrachi.com</a> |
+    <a href="https://impressum.fojadrachi.com" target="_blank">Impressum</a> |
+    Version 1.0 |
+    <a href="https://github.com/fojadrachi/csd-website" target="_blank">GitHub</a>
+</div>
+
+</div>
+
+<div class="sidebar">
+
+<div class="card">
+    <h2 style="text-align:center;">💬 Discord</h2>
+    
+    <div id="serverInfo" style="text-align:center; margin-bottom:15px;">Lade...</div>
+
+    <!-- Modernes Discord Widget (Original + Styling) -->
+    <iframe 
+        src="https://discord.com/widget?id=1495137003350528230&theme=dark" 
+        width="100%" 
+        height="500" 
+        style="border:none; border-radius:15px; overflow:hidden;"
+        allowtransparency="true" 
+        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+    </iframe>
+</div>
+
+    
+</div>
+
+</div>
+
+</div>
+
+<script>
+fetch("https://discord.com/api/guilds/1495137003350528230/widget.json")
+.then(res => res.json())
+.then(data => {
+
+    document.getElementById("serverInfo").innerHTML = `
+        <h3>${data.name}</h3>
+        <p>🟢 Online: ${data.presence_count}</p>
+        <p>👥 Mitglieder: ${data.members.length}</p>
+    `;
+
+    // nur Server Infos anzeigen (Widget übernimmt Rest)
+});
+
+});
+</script>
+
+</body>
+</html>
